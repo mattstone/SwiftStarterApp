@@ -150,7 +150,7 @@ class SSPBaseModel {
         }
         
         switch isError() {
-        case true: print("TSDragonTradeAlertsModel.handleShow error: : \(errors)")
+        case true: print("\(modelName).handleShow error: : \(errors)")
         case false: extractModel(dict: responseObject)
         }
     }
@@ -178,7 +178,7 @@ class SSPBaseModel {
         }
         
         switch isError() {
-        case true: print("TSDragonTradeAlertsModel.handleShow error: : \(errors)")
+        case true: print("\(modelName).handleUpdate error: : \(errors)")
         case false: extractModel(dict: responseObject)
         }
 
@@ -207,7 +207,7 @@ class SSPBaseModel {
         }
         
         switch isError() {
-        case true: print("TSDragonTradeAlertsModel.handleShow error: : \(errors)")
+        case true: print("\(modelName).handleDelete error: : \(errors)")
         case false: extractModel(dict: responseObject)
         }
 
@@ -221,7 +221,6 @@ class SSPBaseModel {
     }
     
     public func isError() -> Bool { return !errors.isEmpty }
-    
     
     public func simpleErrorMessage() -> String {
         if errors.first != nil {

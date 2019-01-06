@@ -135,7 +135,6 @@ class SSPURLRouter : NSObject {
         return dict
     }
     
-    
     func userDevices(model : String, osVersion: String, token : String) -> Dictionary<String, Any> {
         let dict = [
             "user_device" : [
@@ -201,16 +200,10 @@ class SSPURLRouter : NSObject {
     
     func buildNSMutableURLRequest(httpMethod: String, url : String, parameters : Dictionary<String, Any>, access_token : String = "") -> NSMutableURLRequest {
         
-        // Create request
-        //        print("buildNSMutableURLRequest: httpMethod: \(httpMethod)")
-        //        print("buildNSMutableURLRequest: url: \(url)")
-        //        print("buildNSMutableURLRequest: parameters: \(parameters)")
-        
         let request = NSMutableURLRequest(url: NSURL(string: url)! as URL)
         
         do {
             // JSON serialize parameters
-            
             let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions.prettyPrinted)
             
             request.httpMethod = httpMethod
@@ -235,20 +228,16 @@ class SSPURLRouter : NSObject {
         
         // Swift safe typing malarkey..
         if let temp = urlDict["url"] as? String { url = temp }
-        //        print("httpRequest: 4:\(url)")
         
         if let temp = urlDict["parameters"] as? Dictionary<String, Any> { parameters = temp }
-        //parameters["access_token"] = access_token
         
         switch method {
         case .GET:
-            // Build & encode url
             var parametersString = ""
             for (key, value) in parameters { parametersString += "\(key)=\(value)&" }
             
             parameters.removeAll()
             return buildNSMutableURLRequest(httpMethod: "GET", url : url, parameters : parameters, access_token: access_token)
-            
             
         case .POST, .PUT, .PATCH:
             
@@ -287,18 +276,18 @@ class SSPURLRouter : NSObject {
                             default: httpResponse["json"] = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as? NSDictionary
                             }
                         }
-                    case 400: httpResponse["error"] = "Bad Request" as Any?
+                    case 400: httpResponse["error"] = "Bad Request"  as Any?
                     case 401: httpResponse["error"] = "Unauthorised" as Any?
                     case 402: httpResponse["error"] = "Payment Required" as Any?
-                    case 403: httpResponse["error"] = "Forbidden" as Any?
-                    case 404: httpResponse["error"] = "Not Found" as Any?
+                    case 403: httpResponse["error"] = "Forbidden"    as Any?
+                    case 404: httpResponse["error"] = "Not Found"    as Any?
                     case 405: httpResponse["error"] = "Method Not Allowed" as Any?
-                    case 406: httpResponse["error"] = "Not Acceptable" as Any?
+                    case 406: httpResponse["error"] = "Not Acceptable"     as Any?
                     case 407: httpResponse["error"] = "Proxy Authentication requried" as Any?
-                    case 408: httpResponse["error"] = "Request Timeout" as Any?
-                    case 409: httpResponse["error"] = "Conflict" as Any?
+                    case 408: httpResponse["error"] = "Request Timeout"    as Any?
+                    case 409: httpResponse["error"] = "Conflict"     as Any?
                     //                    case 408: httpResponse["error"] = "Gone" as Any?
-                    default:  httpResponse["error"] = "Unknown" as Any?
+                    default:  httpResponse["error"] = "Unknown"      as Any?
                     }
                 }
             } catch {

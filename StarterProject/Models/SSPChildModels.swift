@@ -18,7 +18,7 @@ class SSPChildModels : SSPBaseModels {
     private override init() {
         super.init()
         
-        modelName = "childModels"
+        modelName = "childModels"  // Rename this - as plural
     }
     
     override func handleGet(notification: Notification) {
