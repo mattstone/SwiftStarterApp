@@ -8,7 +8,7 @@ Swift 4 starter project with most of the boiler plate code needed for a modern a
 2. Google Firebase for marketing and user tracking
 3. REST & HTTP/S Model API for JSON Servers
 4. Many helpful String, UIView, & NSDecimalNumber extensions
-5. Many helpful Date extensions
+5. Many helpful Date extensions including Realm for local database
 6. Handy orientation routine in App Delegate
 7. CryptLib and routines for AES encryption and decryption
 
