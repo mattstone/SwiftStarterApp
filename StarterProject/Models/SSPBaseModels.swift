@@ -44,13 +44,16 @@ class SSPBaseModels {
     let includes    = SSPIncludes.sharedInstance
     let restAPI     = SSPURLRouter.sharedInstance
     let httpHandler = SSPHTTPHandler.sharedInstance
+    let realm       = SSPRealmManager.sharedInstance
 
     var modelName      = "" as String
     var responseString = "" as String
     var responseObject =  Dictionary<String, Any>()
     var responseArray  = [Dictionary<String, Any>]()
     var errors         = [Dictionary<String, String>]()
+    
 
+    
     public func get(query : Dictionary<String, Any> = [:], access_token : String, notifier: String) {
         var urlDict = restAPI.restURL(modelName) as Dictionary<String, Any>
         
@@ -94,13 +97,13 @@ class SSPBaseModels {
 
 }
 
-
 class SSPBaseModel {
     
     let config      = SSPConfig.sharedInstance
     let includes    = SSPIncludes.sharedInstance
     let restAPI     = SSPURLRouter.sharedInstance
     let httpHandler = SSPHTTPHandler.sharedInstance
+    let realm       = SSPRealmManager.sharedInstance
 
     var modelName      = "" as String
     var id             = "" as String
@@ -112,7 +115,7 @@ class SSPBaseModel {
     
     // Pagination
     lazy var paging = SSPPaging()
-    
+
     init() {
         setupObservers()
     }
@@ -122,6 +125,8 @@ class SSPBaseModel {
     deinit {
         config.nc.removeObserver(self)  // remove any observers
     }
+    
+    // REST API
     
     public func extractModel(dict: Dictionary<String, Any>) {}
 

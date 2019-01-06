@@ -14,7 +14,7 @@ target 'StarterProject' do
   pod 'Firebase/Core'   # Google Firebase analytics
   pod 'Fabric', '~> 1.9.0'
   pod 'Crashlytics', '~> 3.12.0'
-  pod 'SQLite.swift', '~> 0.11.5'
+  pod 'RealmSwift'
 
   post_install do |installer|
     puts("Update debug pod settings to speed up build time")

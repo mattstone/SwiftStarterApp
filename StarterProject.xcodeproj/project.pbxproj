@@ -44,6 +44,7 @@
 		C948BF4321E0591100A28694 /* NSDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948BF3021E0591100A28694 /* NSDate+Extensions.swift */; };
 		C948BF4421E0591100A28694 /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948BF3121E0591100A28694 /* NSLayoutConstraint+Extensions.swift */; };
 		C948BF4721E06DC700A28694 /* SSPHTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948BF4621E06DC700A28694 /* SSPHTTPHandler.swift */; };
+		C99574B421E20A0E00D390C3 /* SSPRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99574B321E20A0E00D390C3 /* SSPRealmManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		C948BF3021E0591100A28694 /* NSDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extensions.swift"; sourceTree = "<group>"; };
 		C948BF3121E0591100A28694 /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
 		C948BF4621E06DC700A28694 /* SSPHTTPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPHTTPHandler.swift; sourceTree = "<group>"; };
+		C99574B321E20A0E00D390C3 /* SSPRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPRealmManager.swift; sourceTree = "<group>"; };
 		EF4429EF5751AE341E377BCB /* Pods_StarterProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarterProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 				C948BF0D21DF716B00A28694 /* SSPURLRouter.swift */,
 				C948BF0921DF709200A28694 /* SSPBaseModels.swift */,
 				C948BF0B21DF70A600A28694 /* SSPChildModels.swift */,
+				C99574B321E20A0E00D390C3 /* SSPRealmManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,7 +293,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-StarterProject/Pods-StarterProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Colours/Colours.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -300,7 +304,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Colours.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -362,6 +367,7 @@
 				C948BEF221DF565300A28694 /* AppDelegate.swift in Sources */,
 				C948BF0C21DF70A600A28694 /* SSPChildModels.swift in Sources */,
 				C948BF3B21E0591100A28694 /* Int+Extensions.swift in Sources */,
+				C99574B421E20A0E00D390C3 /* SSPRealmManager.swift in Sources */,
 				C948BF3D21E0591100A28694 /* AVPlayerViewController+Extensions.swift in Sources */,
 				C948BF0E21DF716B00A28694 /* SSPURLRouter.swift in Sources */,
 				C948BF4721E06DC700A28694 /* SSPHTTPHandler.swift in Sources */,
